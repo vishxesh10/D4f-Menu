@@ -51,30 +51,50 @@ const App = () => {
           {/* Page 1: Cover */}
           <Page>
             <div className="cover-page">
-              <img src="/logo.jpeg" alt="D4F Logo" className="logo fade-in" />
-              <h1 className="cover-title">D4F</h1>
-              <h3 className="cover-subtitle">FOOD MENU</h3>
-              <div className="divider"></div>
-              <p className="tagline">DIE FOR FOOD</p>
+              <img
+                src="/logo.jpeg"
+                alt="D4F Logo Background"
+                className="cover-bg-image fade-in"
+              />
+              <div className="cover-overlay"></div>
+              <div className="cover-content fade-in">
+                <h3 className="cover-subtitle">FOOD MENU</h3>
+              </div>
             </div>
           </Page>
 
-          {/* Page 2: Veg Burgers */}
+          {/* Page 2: All Burgers */}
           <Page number="1">
-            <h2 className="menu-section-title">Veg Burgers</h2>
+            <h2 className="menu-section-title">Burgers</h2>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                width: "100%",
+              }}
+            >
+              <img
+                src="/images/items/veg_burger.png"
+                alt="Burger"
+                className="menu-item-image fade-in"
+                style={{ width: "60px", height: "60px" }}
+              />
+              <img
+                src="/images/items/chicken_burger.png"
+                alt="Chicken Burger"
+                className="menu-item-image fade-in"
+                style={{ width: "60px", height: "60px" }}
+              />
+            </div>
             <div className="menu-items">
+              <div className="sub-category">VEG BURGERS</div>
               <MenuItem name="Allo Patty Slam" price="₹59" />
               <MenuItem name="Veggie Delight" price="₹79" />
               <MenuItem name="Cheezila Burger" price="₹99" />
               <MenuItem name="Burger-E-Paneer" price="₹129" />
               <MenuItem name="D4F iiconic" price="₹199" />
-            </div>
-          </Page>
 
-          {/* Page 3: Non-Veg Burgers */}
-          <Page number="2">
-            <h2 className="menu-section-title">Non-Veg Burgers</h2>
-            <div className="menu-items">
+              <div className="sub-category">NON-VEG BURGERS</div>
               <MenuItem name="Chicken Kick" price="₹69" />
               <MenuItem name="Double Chicken" price="₹149" />
               <MenuItem name="Chicken Fried" price="₹119" />
@@ -82,15 +102,19 @@ const App = () => {
             </div>
           </Page>
 
-          {/* Page 4: Pasta */}
-          <Page number="3">
+          {/* Page 3: Pasta */}
+          <Page number="2" centered>
             <h2 className="menu-section-title">Pasta</h2>
+            <img
+              src="/images/items/pasta.png"
+              alt="Pasta"
+              className="menu-item-image large-image fade-in"
+            />
             <div className="menu-items">
               <div className="sub-category">VEG PASTA</div>
               <MenuItem name="Alfredo Bliss" price="₹169" />
               <MenuItem name="Rosso Pasta" price="₹179" />
               <MenuItem name="Tangy Tangle" price="₹189" />
-
               <div className="sub-category">NON-VEG PASTA</div>
               <MenuItem name="Creamy Chicken" price="₹189" />
               <MenuItem name="Roma Roast" price="₹209" />
@@ -98,16 +122,20 @@ const App = () => {
             </div>
           </Page>
 
-          {/* Page 5: Fries & Poutine */}
-          <Page number="4">
+          {/* Page 4: Fries & Poutine */}
+          <Page number="3" centered>
             <h2 className="menu-section-title">Fries</h2>
+            <img
+              src="/images/items/fries.png"
+              alt="Fries"
+              className="menu-item-image large-image fade-in"
+            />
             <div className="menu-items">
               <div className="sub-category">CRISPY FRIES</div>
               <MenuItem name="Masala Bomb" price="₹99" />
               <MenuItem name="Cheesy Dust" price="₹129" />
               <MenuItem name="Fries Gone Cheesy" price="₹149" />
               <MenuItem name="iiconic Phase 1" price="₹199" />
-
               <div className="sub-category">NON-VEG & POUTINE</div>
               <MenuItem name="iiconic Phase 2" price="₹249" />
               <MenuItem
@@ -118,14 +146,18 @@ const App = () => {
             </div>
           </Page>
 
-          {/* Page 6: Popusas & Fried Rice */}
-          <Page number="5">
+          {/* Page 5: Popusas & Fried Rice */}
+          <Page number="4" centered>
             <h2 className="menu-section-title">Specialities</h2>
+            <img
+              src="/images/items/specialities.png"
+              alt="Specialities"
+              className="menu-item-image large-image fade-in"
+            />
             <div className="menu-items">
               <div className="sub-category">POPUSAS</div>
               <MenuItem name="Pupusas (Veg)" price="₹199" />
               <MenuItem name="Pupusas (NV)" price="₹249" />
-
               <div className="sub-category">FRIED RICE</div>
               <MenuItem name="Fried Rice" price="₹99" />
               <MenuItem name="Rice with Paneer" price="₹159" />
@@ -133,23 +165,32 @@ const App = () => {
             </div>
           </Page>
 
-          {/* Page 7: Momos & Chicken */}
-          <Page number="6">
+          {/* Page 6: Momos & Chicken */}
+          <Page number="5" centered>
             <h2 className="menu-section-title">Momos & Wings</h2>
+            <img
+              src="/images/items/momos_wings.png"
+              alt="Momos and Wings"
+              className="menu-item-image large-image fade-in"
+            />
             <div className="menu-items">
               <MenuItem name="Veg Momos" price="₹79" />
               <MenuItem name="Paneer Momos" price="₹129" />
               <MenuItem name="Chicken Momos" price="₹129" />
-
               <div className="sub-category">CHICKEN WINGS</div>
               <MenuItem name="Wings (6pcs)" price="₹159" />
               <MenuItem name="KFC Style (6pcs)" price="₹199" />
             </div>
           </Page>
 
-          {/* Page 8: Mojitos */}
-          <Page number="7">
+          {/* Page 7: Mojitos */}
+          <Page number="6" centered>
             <h2 className="menu-section-title">Drinks</h2>
+            <img
+              src="/images/items/mojito.png"
+              alt="Mojito"
+              className="menu-item-image large-image fade-in"
+            />
             <div className="menu-items">
               <MenuItem name="Mint Mojito" price="₹59" />
               <MenuItem name="Watermelon" price="₹59" />
@@ -182,10 +223,9 @@ const App = () => {
               >
                 VISIT US AGAIN
               </p>
-
               <div className="contact-info">
                 <div className="info-item">
-                  <Instagram size={24} />
+                  <Instagram size={28} />
                   <span style={{ fontSize: "1.5rem", fontWeight: "700" }}>
                     d4f.food
                   </span>
@@ -209,7 +249,6 @@ const MenuItem = React.memo(({ name, price, description }) => (
   <div className="menu-item-container fade-in">
     <div className="menu-item">
       <span className="item-name">{name}</span>
-      <div className="item-dots"></div>
       <span className="item-price">{price}</span>
     </div>
     {description && (
@@ -220,6 +259,7 @@ const MenuItem = React.memo(({ name, price, description }) => (
           fontStyle: "italic",
           marginTop: "2px",
           opacity: 0.9,
+          textAlign: "center",
         }}
       >
         {description}

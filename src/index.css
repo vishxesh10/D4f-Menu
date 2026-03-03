@@ -2,14 +2,15 @@
 
 :root {
   --d4f-red: #E31E24;
-  --d4f-green: #32CD32;
-  --black-deep: #000000;
-  --black-textured: #0a0a0a;
+  --d4f-green: #228B22; /* Darker green for better contrast on white */
+  --bg-color: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #444444;
   --white: #ffffff;
-  --gray-light: #f0f0f0;
-  --font-heading: 'Oswald', sans-serif; /* Cleaner, bolder for this theme */
+  --gray-light: #f5f5f5;
+  --font-heading: 'Oswald', sans-serif;
   --font-body: 'Montserrat', sans-serif;
-  --shadow-organic: 0 10px 30px rgba(0,0,0,0.8);
+  --shadow-organic: 0 10px 40px rgba(0,0,0,0.15);
 }
 
 * {
@@ -19,9 +20,9 @@
 }
 
 body {
-  background-color: var(--black-deep);
-  background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-  color: var(--gray-light);
+  background-color: #f0f0f0;
+  background-image: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 100%);
+  color: var(--text-primary);
   font-family: var(--font-body);
   overflow: hidden;
   height: 100vh;
@@ -52,14 +53,6 @@ h1, h2, h3 {
   color: var(--d4f-green);
 }
 
-.red-border {
-  border: 2px solid var(--d4f-red);
-}
-
-.green-border {
-  border: 2px solid var(--d4f-green);
-}
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -68,9 +61,4 @@ h1, h2, h3 {
 
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* Legacy utility mapping for easier transition */
-.gold-text {
-  color: var(--d4f-red); /* Map gold titles to red */
 }

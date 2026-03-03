@@ -5,7 +5,12 @@ const Page = forwardRef((props, ref) => {
   return (
     <div className="page" ref={ref}>
       <div className="page-content">
-        <div className="page-border">{props.children}</div>
+        <div
+          className="page-border"
+          style={props.centered ? { justifyContent: "center" } : {}}
+        >
+          {props.children}
+        </div>
         <div className="page-footer">
           {props.number && <span className="page-number">{props.number}</span>}
         </div>
